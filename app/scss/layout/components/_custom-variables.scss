@@ -1,0 +1,117 @@
+
+$white:    #fff !default;
+$gray-100: #f2f1f1; //bg (happy client)
+
+$gray-200: #ddd;//about us (headings)
+$gray-300: #ccc;//about us (paragraphs)
+
+$gray-400: #b7b3b3; //text lighten
+$gray-500: #828181; //most of text color
+$gray-600: #444;
+
+//footer colors
+$gray-700: #333;
+$gray-800: #222;
+$gray-900: #101010;
+$black: #111;
+
+$grays: map-merge(
+  $grays,
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  )
+);
+
+
+
+$blue: #0061ff; //bg for 'Be'
+$blue-light: #089dea; //bg for footer
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e8538c;  //for social ball
+$red:     #dc3545 !default;
+$orange:  #f34d04;
+$yellow:  #ffba00;
+$green: #54d154;
+$teal:    #20c997 !default;
+$cyan: #00aced; //bg for twitter
+
+
+
+$green-darker: #2b9b2b;
+$green-dark: #207b20;
+
+
+$primary: $green;
+$primary-dark: $green-dark;
+
+$secondary:     $gray-500;
+$success:       $green-darker;
+$info:          $cyan;
+$warning:       $yellow !default;
+$danger:        $orange;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+
+
+$theme-colors: map-merge(
+  $theme-colors,
+    (
+      "primary":    $primary,
+      "secondary":  $secondary,
+      "success":    $success,
+      "info":       $info,
+      "warning":    $warning,
+      "danger":     $danger,
+      "light":      $light,
+      "dark":       $dark
+    )
+);
+
+$socials-bg-color: #c5e9c5;
+
+$yiq-text-dark:             $gray-500;
+
+$body-color:                $gray-500;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $white;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: none;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom:   1rem !default;
+
+$container-max-widths: map-merge(
+  $container-max-widths,
+  (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1170px
+  )
+);
+
+$border-radius: 50%;
+
+$navbar-light-color: $white;
+$navbar-light-hover-color: $link-hover-color;
+$navbar-light-active-color:         rgba($black, .9) !default;
+$navbar-light-disabled-color:       rgba($black, .3) !default;
+$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
+$navbar-light-toggler-border-color: rgba($black, .1) !default;

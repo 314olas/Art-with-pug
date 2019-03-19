@@ -1,0 +1,9 @@
+mixin linkList(items, activeLink)
+    ul.navbar-nav
+        - for (var i = 0; i < items.length; i++)
+            if i == activeLink
+                li.nav-item.active
+                    a.nav-link(href="#")= items[i]
+            else
+                li.nav-item
+                    a.nav-link(href="#")= items[i]
