@@ -2,6 +2,67 @@ input{
     outline: none;
 }
 
+.wrapper{
+    min-height: 320px;
+}
+
+.btn.btn-primary{
+    color: $white;
+}
+
+.btn.btn-light{
+    color: $success;
+    border-color: $success;
+}
+
+.btn-gray{
+    color: $gray-btn-color;
+    background: $gray-btn-bg;
+
+    &:hover{
+
+    }
+}
+
+.common-section{
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.common-heading-block{
+
+    .title-holder{
+        text-transform: uppercase;
+    }
+}
+
+.default-content-color{
+    color: $gray-400;
+}
+
+.primary-title-color{
+    color: $green-dark;
+}
+
+.title-decoration{
+    position: relative;
+    padding-bottom: 13px;
+
+    &:after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 44px;
+        border-top: 2px solid;
+    }
+
+    h3{
+        margin-bottom: 0;
+    }
+}
+
 .top-block{
     min-height: 100vh;
     display: flex;
@@ -11,3 +72,138 @@ input{
     background-repeat: no-repeat;
     background-image: url('../../img/header-bg.jpg');
 }
+
+.intro{
+
+    .title-holder{
+        padding-bottom: 40px;
+    }
+}
+
+.filter-block{
+    position: relative;
+    z-index: 1;
+
+    &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: rgba($black, .2);
+        z-index: 1;
+    }
+}
+
+.scroll-down-holder{
+    padding-bottom: 12px;
+
+    a{
+        background-color: rgba($white, .7);
+        color: $black;
+
+        &:focus{
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.common-arrow-down{
+    position: relative;
+    padding-right: 45px;
+
+    &:after{
+        position: absolute;
+        content: "\ea3e";
+        font-family: 'icomoon';
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        font-size: 14px;
+    }
+}
+
+.common-arrow-right{
+    position: relative;
+    padding-right: 45px;
+
+    &:after{
+        position: absolute;
+        content: "\ea3c";
+        font-family: 'icomoon';
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        font-size: 14px;
+    }
+}
+
+.card-img-top{
+    display: flex;
+    justify-content: center;
+
+    [class^="icon-"], [class*=" icon-"]{
+        font-size: 84px;
+        color: $primary;
+        background-color: $green-light;
+        padding: 28px;
+        border-radius: 30px;
+    }
+}
+
+.we-do{
+    .common-heading-block{
+        padding-bottom: 70px;
+    }
+}
+
+.latest-work{
+
+    .btn.btn-light.active {
+        background-color: $success;
+        color: $white;
+        border-color: $success;
+
+
+        &:focus{
+            box-shadow: none;
+        }
+    }
+
+    .img-holder{
+        align-items: center;
+
+        img{
+            width: 100%;
+            object-fit: fill;
+        }
+    }
+
+    .common-heading-block{
+        padding-bottom: 60px;
+    }
+}
+
+.testimonials{
+
+    .common-heading-block{
+        padding-bottom: 70px;
+    }
+}
+
+.our-client{
+    background-color: $gray-100;
+
+    .common-heading-block{
+        padding-bottom: 70px;
+    }
+}
+
+
+
+
+
+
+

@@ -1,7 +1,3 @@
-$(function() {
-
-	// Пользовательские функции
-
-});
-
-import collapse from "../bootstrap-js/collapse.js";
+// import $ from '../libs/jquery/dist/jquery';
+//
+// $('.slider').slick();

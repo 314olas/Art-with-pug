@@ -7,3 +7,79 @@ mixin linkList(items, activeLink)
             else
                 li.nav-item
                     a.nav-link(href="#")= items[i]
+
+mixin card(obj)
+    .row
+        each item in obj
+            .col-12.col-lg-4
+                .card
+                    .card-img-top
+                        span(class= item.class)
+                    .card-body
+                        .title-holder.card-title.text-center
+                            h2= item.title
+                        .content.card-text.text-center
+                            p= item.text
+                        .btn-holder.d-flex.justify-content-center
+                            a.btn.btn-sm.btn-primary(href="#") Learn more
+
+mixin heading(title, content, theme)
+    if theme == undefined
+        .row.justify-content-center
+            .col-12.col-lg-6
+                .common-heading-block
+                    .title-holder.title-decoration.text-center.mb-2
+                        h3= title
+                    .content.text-center.default-content-color
+                        p= content
+    else
+        .row.justify-content-center
+            .col-12.col-lg-6
+                .common-heading-block
+                    .title-holder.title-decoration.text-center.mb-2.primary-title-color
+                        h3= title
+                    .content.text-center.text-success
+                        p= content
+
+mixin addImg(arr)
+    .container.common-section
+        .row
+            - for (var i = 0; i < arr.length; i++)
+                .col-6.col-lg-2
+                    .img-holder
+                        img(src=arr[i] alt=arr[i])
+
+mixin addsliderItem(obj)
+    -for (var i = 0; i < obj.length; i++)
+        .slider-item
+            .col-12.col-lg-8
+                .slider-item
+                    blockquote
+                        q= obj[i].content
+                    cite
+                        .img-holder
+                            img(src=obj[i].photo  alt= obj[i].name + "'s photo" )
+                        .description
+                            p= obj[i].name
+                            p= obj[i].someText
+
+mixin clientsLogo(arr)
+    .row.common-section
+        - for (var i = 0; i < arr.length; i++)
+            .col-12.col-md-4.col-lg-3
+                .logo-holder
+                    img(src=arr[i] alt=arr[i])
+
+mixin personals(obj)
+    .row
+        -for (var i = 0; i < obj.length; i++)
+            .col-12.col-lg-2
+                .img-holder
+                    img(src=obj[i].photo alt=obj[i].name)
+                .name-holder
+                    p= obj[i].name
+                .team-social
+                    ul
+                    each index, item in obj[i].socials
+                        li
+                            a(href=obj[i].socials[index])

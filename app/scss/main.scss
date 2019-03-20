@@ -22,12 +22,9 @@ $media-expressions: (
 //@import 'base/typography';
 //@import 'base/forms';
 //
+@import 'layout/components/bootstrap';
 @import 'layout/common';
 @import 'layout/header';
 @import 'layout/footer';
-
-@import 'layout/components/bootstrap';
-
 @import 'fonts/icomoon';
-
-
+//@import '../../node_modules/slick-carousel/slick/slick';

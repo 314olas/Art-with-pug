@@ -1,0 +1,15 @@
+include variables
+include mixins
+
+
+section.latest-work.bg-primary.common-section
+    +heading("our latest work", "Lorem ipsum dolor sit amet. Proin gravida nibh vel velit auctor aliquet.","primary")
+    .container.d-flex.justify-content-center
+        .btn-group(role="btn-group" aria-label="filter button")
+            button.btn.btn-light.active(type='button') Photography
+            button.btn.btn-light(type='button') Design
+            button.btn.btn-light(type='button') Print
+
+    +addImg(img)
+    .container.d-flex.justify-content-center
+        a.btn.btn-success.common-arrow-right(href="#") View more work

@@ -3,9 +3,11 @@ include mixins
 
 header
     .container
-        nav.navbar.navbar-expand-lg.navbar-light.bg-transparent
+        nav.navbar.navbar-expand-lg.navbar-light.bg-transparent.pt-0
             button.navbar-toggler(type='button' data-togler='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             .collapse.navbar-collapse.justify-content-between(id='"navbarSupportedContent')
-                +linkList(headerList, 0)
-                form.form-inline
-                    input.form-inline(type='search' placeholder='Search...' aria-label='Search')
+                +linkList(headerList, 1)
+                a.navbar-brand(href="#")
+                    img(src='img/logo.png' alt='logo')
+                form.form-inline.search-form
+                    input.form-inline.custom-input.mt-2(type='search' placeholder='Search...' aria-label='Search')
