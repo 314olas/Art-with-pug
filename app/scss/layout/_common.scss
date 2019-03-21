@@ -3,7 +3,8 @@ input{
 }
 
 .wrapper{
-    min-height: 320px;
+    min-width: 320px;
+    overflow: hidden;
 }
 
 .btn.btn-primary{
@@ -46,7 +47,7 @@ input{
 
 .title-decoration{
     position: relative;
-    padding-bottom: 13px;
+    padding-bottom: 1px;
 
     &:after{
         position: absolute;
@@ -74,6 +75,8 @@ input{
 }
 
 .intro{
+    position: relative;
+    z-index: 10;
 
     .title-holder{
         padding-bottom: 40px;
@@ -98,6 +101,8 @@ input{
 
 .scroll-down-holder{
     padding-bottom: 12px;
+    position: relative;
+    z-index: 10;
 
     a{
         background-color: rgba($white, .7);
@@ -173,12 +178,11 @@ input{
     }
 
     .img-holder{
-        align-items: center;
-
-        img{
-            width: 100%;
-            object-fit: fill;
-        }
+        width: 160px;
+        height: 160px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .common-heading-block{
@@ -201,9 +205,197 @@ input{
     }
 }
 
+.meet-team{
+
+    .img-holder{
+        width: 125px;
+        height: 125px;
+        overflow: hidden;
+        border-radius: 50%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .common-decoration-block{
+        height: 77px;
+        margin: 10px 0;
+        position: relative;
+
+        &:before{
+            position: absolute;
+            height: 100%;
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 2px solid $green-dark;
+        }
+    }
+
+    footer{
+        background-color: $footer-bg-meet-team;
+
+        .btn-holder{
+            padding: 25px 0;
+        }
+    }
+}
+
+.team-social{
+    display: flex;
+}
+
+.socials-contact{
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2px;
+    padding-left: 2px;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+        padding: 4px 5px;
+    }
+
+    a{
+        display: block;
+    }
+
+    .icon-dribbble{
+        color: $pink;
+        font-size: 24px;
+    }
+
+    .icon-behance,
+    .icon-twitter{
+       color: $social-green-bg-color;
+        font-size: 15px;
+    }
+
+    .twitter,
+    .behance{
+        padding: 1px 6px;
+        border-radius: 50%;
+    }
+
+    .behance{
+        background-color: $blue;
+    }
+
+    .twitter{
+        background-color: $info;
+    }
+
+    .dribbble {
+        width: 24px;
+        height: 24px;
+        display: block;
+    }
+}
+
+.bg-light-green{
+    background: $social-green-bg-color;
+
+    .icon-behance,
+    .icon-twitter {
+        color: $social-green-bg-color;
+    }
+}
+
+.bg-light-gray{
+    background-color: $social-bg-light;
+
+    .icon-behance,
+    .icon-twitter {
+        color: $social-bg-light;
+    }
+}
+
+.info{
+    background-color: $info-bg;
+    color: $info-paragraph-color;
+
+    textarea{
+        resize: none;
+    }
+}
+
+.left-block{
+    width: 53px;
+    height: 53px;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.right-block{
 
 
+    a{
+        font-size: 13px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+}
 
+.contacts{
 
+    a{
+        color: $info-paragraph-color;
+        text-decoration: underline;
+    }
+}
 
+.contact-form{
+
+    input,textarea {
+        background-color: $gray-600;
+        border-color: transparent;
+        color: $form-input-color;
+
+        &:focus{
+            background-color: $gray-600;
+            border-color: transparent;
+            box-shadow: none;
+            color: $form-input-color;
+        }
+
+        &::placeholder{
+            color: $form-input-color;
+        }
+    }
+
+    [name="name"]{
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    [name="email"]{
+        border-radius: 0;
+    }
+
+    [name="message"]{
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-width: 3px;
+    }
+
+    button{
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+}
+
+.seen-on{
+    background-color: $gray-800;
+    padding: 28px 0;
+
+    .title-holder{
+        color: $gray-900;
+    }
+}
 

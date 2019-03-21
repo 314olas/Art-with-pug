@@ -29,25 +29,31 @@ mixin heading(title, content, theme)
             .col-12.col-lg-6
                 .common-heading-block
                     .title-holder.title-decoration.text-center.mb-2
-                        h3= title
+                        h4= title
                     .content.text-center.default-content-color
                         p= content
-    else
+    else if theme !== undefined
         .row.justify-content-center
             .col-12.col-lg-6
                 .common-heading-block
                     .title-holder.title-decoration.text-center.mb-2.primary-title-color
-                        h3= title
+                        h4= title
                     .content.text-center.text-success
                         p= content
+
+mixin headingWithoutParagraph(title)
+    .title-holder.title-decoration.text-center.mb-4.text-uppercase
+        h5= title
 
 mixin addImg(arr)
     .container.common-section
         .row
+            .offset-1
             - for (var i = 0; i < arr.length; i++)
-                .col-6.col-lg-2
-                    .img-holder
-                        img(src=arr[i] alt=arr[i])
+                if (i % 5 == 0 && i % 5 == 5)
+                .col-2
+                    .d-flex.justify-content-center
+                        .img-holder(style="background-image: url('../../"+arr[i] + "')" )
 
 mixin addsliderItem(obj)
     -for (var i = 0; i < obj.length; i++)
@@ -70,16 +76,40 @@ mixin clientsLogo(arr)
                 .logo-holder
                     img(src=arr[i] alt=arr[i])
 
-mixin personals(obj)
-    .row
-        -for (var i = 0; i < obj.length; i++)
-            .col-12.col-lg-2
-                .img-holder
-                    img(src=obj[i].photo alt=obj[i].name)
-                .name-holder
-                    p= obj[i].name
-                .team-social
-                    ul
-                    each index, item in obj[i].socials
-                        li
-                            a(href=obj[i].socials[index])
+mixin personals(obj, theme)
+    .container
+        .row.justify-content-center
+            -for (var i = 0; i < obj.length; i++)
+                .col-12.col-md-5.col-lg-2
+                    .d-flex.flex-column.align-items-center.mb-5.mb-lg-0
+                        .img-holder(style="background-image: url('../../"+obj[i].photo + "')" )
+                        .common-decoration-block
+                        .text-white
+                            p= obj[i].name
+                        +social(obj[i].socials, theme)
+
+mixin social(obj, theme)
+    if theme == "green"
+        .team-social.justify-content-center
+            ul.socials-contact.bg-light-green.nav
+                each index, item in obj
+                    li
+                        a(class=item href=item)
+                            span(class='icon-' + item)
+    else
+        .team-social.justify-content-center
+            ul.socials-contact.bg-light-gray.nav
+                each index, item in obj
+                    li
+                        a(class=item href=item)
+                            span(class='icon-' + item)
+
+mixin createPost(arr)
+    .posts
+        -for (var i=0; i < arr.length; i++)
+            .d-flex.mb-3
+                .left-block.rounded.mr-2(style="background-image: url('../../"+ arr[i].photo + "')" )
+                .right-block.d-flex.flex-column.justify-content-center
+                    h5= arr[i].title
+                    a.btn.btn-sm.text-uppercase.text-white.align-self-start(href="#" class="btn-" + arr[i].color)= arr[i].btnText
+

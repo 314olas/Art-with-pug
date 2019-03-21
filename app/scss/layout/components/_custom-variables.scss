@@ -13,7 +13,7 @@ $gray-btn-bg: #dddcdc;
 $gray-btn-color:  #a59d9d;
 
 //footer colors
-$gray-700: #333;
+$gray-700: #333;  //bg info
 $gray-800: #222;
 $gray-900: #101010;
 $black: #111;
@@ -34,7 +34,6 @@ $grays: map-merge(
 );
 
 
-
 $blue: #0061ff; //bg for 'Be'
 $blue-light: #089dea; //bg for footer
 $indigo:  #6610f2 !default;
@@ -48,13 +47,27 @@ $teal:    #20c997 !default;
 $cyan: #00aced; //bg for twitter
 
 
+
 $green-light: #e1f3e1;
+$green-lighten: #3eba3e;
 $green-darker: #2b9b2b;
 $green-dark: #207b20;
+$white-gray: #e6e7e6;
 
+
+$footer-bg-meet-team: $green-lighten;
+
+$info-bg: $gray-700;
+$info-heading-color: $gray-200;
+$info-paragraph-color: $gray-300;
 
 $primary: $green;
 $primary-dark: $green-dark;
+
+$social-green-bg-color: #c5e9c5;
+$social-bg-light: $white-gray;
+
+$form-input-color: #777;
 
 $secondary:     $gray-500;
 $success:       $green-darker;
@@ -80,7 +93,7 @@ $theme-colors: map-merge(
     )
 );
 
-$socials-bg-color: #c5e9c5;
+
 
 $yiq-text-dark:             $gray-500;
 
@@ -111,8 +124,9 @@ $container-max-widths: map-merge(
 );
 
 $h2-font-size: 55px;
-$h3-font-size: 21px;
-$h4-font-size: 24px;
+$h3-font-size: 24px;
+$h4-font-size: 21px;
+$h5-font-size: 16px;
 
 $navbar-light-color: $link-color;
 $navbar-light-hover-color: $link-color;
