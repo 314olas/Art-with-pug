@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Proxima Nova Lt';
+  src: url('fonts/proxima/ProximaNova-LightIt.eot');
+  src: local('fonts/proxima/Proxima Nova Light Italic'), local('ProximaNova-LightIt'),
+  url('fonts/proxima/ProximaNova-LightIt.eot?#iefix') format('embedded-opentype'),
+  url('fonts/proxima/ProximaNova-LightIt.woff') format('woff'),
+  url('fonts/proxima/ProximaNova-LightIt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url('fonts/proxima/ProximaNova-RegularIt.eot');
+  src: local('Proxima Nova Regular Italic'), local('ProximaNova-RegularIt'),
+  url('fonts/proxima/ProximaNova-RegularIt.eot?#iefix') format('embedded-opentype'),
+  url('fonts/proxima/ProximaNova-RegularIt.woff') format('woff'),
+  url('fonts/proxima/ProximaNova-RegularIt.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+
+$font-family-base: "Proxima Nova Rg";
+
+$montserrat: 'Montserrat', sans-serif;
+
+
+$headings-font-family: $montserrat;
+$input-btn-font-family: 'Proxima Nova Lt';
+
 
 $white:    #fff !default;
 $gray-100: #f2f1f1; //bg (happy client)
@@ -33,7 +65,6 @@ $grays: map-merge(
   )
 );
 
-
 $blue: #0061ff; //bg for 'Be'
 $blue-light: #089dea; //bg for footer
 $indigo:  #6610f2 !default;
@@ -54,6 +85,8 @@ $green-darker: #2b9b2b;
 $green-dark: #207b20;
 $white-gray: #e6e7e6;
 
+$slick-arrows-color: #e0dfdf;
+
 
 $footer-bg-meet-team: $green-lighten;
 
@@ -68,6 +101,8 @@ $social-green-bg-color: #c5e9c5;
 $social-bg-light: $white-gray;
 
 $form-input-color: #777;
+
+$cite-img-holder-border: #e1e1e1;
 
 $secondary:     $gray-500;
 $success:       $green-darker;
@@ -123,25 +158,26 @@ $container-max-widths: map-merge(
   )
 );
 
-$h2-font-size: 55px;
-$h3-font-size: 24px;
-$h4-font-size: 21px;
-$h5-font-size: 16px;
+$h1-font-size: 41px;
+$h2-font-size: 24px;
+$h3-font-size: 21px;
+$h4-font-size: 16px;
 
-$navbar-light-color: $link-color;
-$navbar-light-hover-color: $link-color;
-$navbar-light-active-color:         rgba($black, .9) !default;
-$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
-$navbar-light-toggler-border-color: rgba($black, .1) !default;
 
-$navbar-light-active-color: $link-color;
+$navbar-dark-color: $link-color;
+$navbar-dark-toggler-border-color: $primary;
+$navbar-dark-hover-color: $link-color;
+$navbar-dark-color: $link-color;
 
-$custom-btn-border-radius: 100px;
+$border-radius: 20px;
 
 $btn-font-size-lg: 22px;
 
-$btn-border-radius: $custom-btn-border-radius;
-$border-radius-lg:  $custom-btn-border-radius;
-$border-radius-sm:  $custom-btn-border-radius;
+
+$btn-border-radius:$border-radius;
+$btn-border-radius-lg: $border-radius * 2;
+$btn-border-radius-sm: $border-radius;
+$btn-padding-x-sm: 20px;
+$btn-padding-x-lg:  20px;
 
 $card-border-width: 0;

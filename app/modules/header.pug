@@ -3,12 +3,12 @@ include mixins
 
 header
     .container
-        nav.navbar.navbar-expand-lg.navbar-dark.pt-0
+        nav.navbar.navbar-expand-lg.navbar-dark
+            a.logo(href="/")
+                img(src='img/logo.png' alt='logo')
             button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                 span.navbar-toggler-icon
-            .collapse.navbar-collapse.justify-content-between(id='navbarSupportedContent')
+            .collapse.navbar-collapse.justify-content-between.nav-position(id='navbarSupportedContent')
                 +linkList(headerList, 1)
-                a.navbar-brand(href="/")
-                    img(src='img/logo.png' alt='logo')
-                form.form-inline.search-form
-                    input.form-inline.custom-input.mt-2(type='search' placeholder='Search...' aria-label='Search')
+                form.form-inline.search-form.justify-content-center.py-2.py-lg-0
+                    input.form-inline.custom-input(type='search' placeholder='Search...' aria-label='Search')

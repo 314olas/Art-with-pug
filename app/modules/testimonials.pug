@@ -4,6 +4,7 @@ include mixins
 section.testimonials.common-section
     .container
         +heading("testimonials", "Lorem ipsum dolor sit amet. Proin gravida nibh vel velit auctor aliquet.")
-        .row
-            .slider
-                +addsliderItem(blockquoteItems)
+        .row.justify-content-center
+            .col-lg-6
+                .slider
+                    +addsliderItem(blockquoteItems)

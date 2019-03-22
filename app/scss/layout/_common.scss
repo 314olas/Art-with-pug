@@ -3,17 +3,32 @@ input{
 }
 
 .wrapper{
-    min-width: 320px;
     overflow: hidden;
 }
 
-.btn.btn-primary{
-    color: $white;
+h1 {
+    font-weight: bold;
+    margin-bottom: 0;
+
+    @include media-breakpoint-up(md) {
+        font-size: 55px;
+    }
 }
 
-.btn.btn-light{
+h3{
+  font-weight: 300;
+}
+
+.btn {
+
+  &.btn-primary{
+    color: $white;
+  }
+
+  &.btn-light{
     color: $success;
     border-color: $success;
+  }
 }
 
 .btn-gray{
@@ -30,11 +45,8 @@ input{
     padding-bottom: 50px;
 }
 
-.common-heading-block{
-
-    .title-holder{
-        text-transform: uppercase;
-    }
+.common-text-block{
+  margin-bottom: 50px;
 }
 
 .default-content-color{
@@ -47,12 +59,13 @@ input{
 
 .title-decoration{
     position: relative;
-    padding-bottom: 1px;
+    padding-bottom: 22px;
+    text-transform: uppercase;
 
     &:after{
         position: absolute;
         content: "";
-        bottom: 0;
+        bottom: 11px;
         left: 50%;
         transform: translateX(-50%);
         width: 44px;
@@ -83,7 +96,7 @@ input{
     }
 }
 
-.filter-block{
+.overlay{
     position: relative;
     z-index: 1;
 
@@ -145,6 +158,23 @@ input{
     }
 }
 
+.card{
+  margin-bottom: 30px;
+
+  h2{
+    font-weight: bold;
+  }
+
+  a{
+    font-weight: bold;
+  }
+
+  .content{
+    font-family: $montserrat;
+    font-size: 15px;
+  }
+}
+
 .card-img-top{
     display: flex;
     justify-content: center;
@@ -155,12 +185,6 @@ input{
         background-color: $green-light;
         padding: 28px;
         border-radius: 30px;
-    }
-}
-
-.we-do{
-    .common-heading-block{
-        padding-bottom: 70px;
     }
 }
 
@@ -178,31 +202,46 @@ input{
     }
 
     .img-holder{
-        width: 160px;
-        height: 160px;
+        width: 100%;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
+        padding-top: 100%;
     }
 
-    .common-heading-block{
-        padding-bottom: 60px;
+    .custom-block{
+        flex-basis: 100%;
+
+        @include media-breakpoint-up(sm) {
+            flex-basis: 50%;
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex-basis: 20%;
+        }
     }
 }
 
 .testimonials{
 
-    .common-heading-block{
-        padding-bottom: 70px;
+    p{
+        margin: 0;
+    }
+
+    .img-holder{
+        width: 46px;
+        height: 46px;
+        overflow: hidden;
+        border-radius: 50%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 1px solid $cite-img-holder-border;
     }
 }
 
 .our-client{
     background-color: $gray-100;
-
-    .common-heading-block{
-        padding-bottom: 70px;
-    }
 }
 
 .meet-team{
@@ -218,15 +257,15 @@ input{
     }
 
     .common-decoration-block{
-        height: 77px;
-        margin: 10px 0;
         position: relative;
+        padding-top: 97px;
 
         &:before{
             position: absolute;
-            height: 100%;
+            height: 77px;
             content: "";
             left: 50%;
+            top: 10px;
             transform: translateX(-50%);
             border-left: 2px solid $green-dark;
         }
@@ -253,63 +292,38 @@ input{
     padding-left: 2px;
 
     li {
-        display: inline-block;
-        vertical-align: top;
-        padding: 4px 5px;
+        padding: 6px 4px;
+        text-align: center;
     }
 
     a{
-        display: block;
-    }
-
-    .icon-dribbble{
-        color: $pink;
-        font-size: 24px;
-    }
-
-    .icon-behance,
-    .icon-twitter{
-       color: $social-green-bg-color;
-        font-size: 15px;
-    }
-
-    .twitter,
-    .behance{
-        padding: 1px 6px;
-        border-radius: 50%;
-    }
-
-    .behance{
-        background-color: $blue;
-    }
-
-    .twitter{
-        background-color: $info;
-    }
-
-    .dribbble {
         width: 24px;
         height: 24px;
         display: block;
     }
+    span{
+        font-size: 24px;
+    }
+}
+
+.bg-for-twitter{
+    color: $info;
+}
+
+.bg-for-behance{
+    color: $blue;
+}
+
+.bg-for-dribbble{
+    color: $pink;
 }
 
 .bg-light-green{
     background: $social-green-bg-color;
-
-    .icon-behance,
-    .icon-twitter {
-        color: $social-green-bg-color;
-    }
 }
 
 .bg-light-gray{
     background-color: $social-bg-light;
-
-    .icon-behance,
-    .icon-twitter {
-        color: $social-bg-light;
-    }
 }
 
 .info{
@@ -321,22 +335,26 @@ input{
     }
 }
 
-.left-block{
-    width: 53px;
-    height: 53px;
-    overflow: hidden;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+.posts{
 
-.right-block{
+    .img-holder{
+        width: 53px;
+        height: 53px;
+        overflow: hidden;
+        border-radius: 4px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .text-content{
 
 
-    a{
-        font-size: 13px;
-        padding-top: 2px;
-        padding-bottom: 2px;
+        a{
+            font-size: 13px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
     }
 }
 
@@ -344,7 +362,6 @@ input{
 
     a{
         color: $info-paragraph-color;
-        text-decoration: underline;
     }
 }
 

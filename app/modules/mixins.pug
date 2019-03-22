@@ -11,68 +11,66 @@ mixin linkList(items, activeLink)
 mixin card(obj)
     .row
         each item in obj
-            .col-12.col-lg-4
+            .col-lg-4
                 .card
                     .card-img-top
                         span(class= item.class)
                     .card-body
-                        .title-holder.card-title.text-center
-                            h2= item.title
+                        .card-title.text-center
+                            h3= item.title
                         .content.card-text.text-center
                             p= item.text
-                        .btn-holder.d-flex.justify-content-center
+                        .text-center
                             a.btn.btn-sm.btn-primary(href="#") Learn more
 
 mixin heading(title, content, theme)
     if theme == undefined
         .row.justify-content-center
-            .col-12.col-lg-6
-                .common-heading-block
-                    .title-holder.title-decoration.text-center.mb-2
-                        h4= title
-                    .content.text-center.default-content-color
+            .col-lg-6
+                .common-text-block
+                    .title-decoration.text-center
+                        h3= title
+                    .text-center.default-content-color
                         p= content
     else if theme !== undefined
         .row.justify-content-center
-            .col-12.col-lg-6
+            .col-lg-6
                 .common-heading-block
-                    .title-holder.title-decoration.text-center.mb-2.primary-title-color
-                        h4= title
-                    .content.text-center.text-success
+                    .title-decoration.text-center.mb-2.primary-title-color
+                        h3= title
+                    .text-center.text-success
                         p= content
 
 mixin headingWithoutParagraph(title)
     .title-holder.title-decoration.text-center.mb-4.text-uppercase
-        h5= title
+        h4= title
 
 mixin addImg(arr)
     .container.common-section
-        .row
-            .offset-1
-            - for (var i = 0; i < arr.length; i++)
-                if (i % 5 == 0 && i % 5 == 5)
-                .col-2
-                    .d-flex.justify-content-center
-                        .img-holder(style="background-image: url('../../"+arr[i] + "')" )
+        .row.justify-content-center
+            .col-lg-10
+                .row
+                    - for (var i = 0; i < arr.length; i++)
+                        .custom-block.col
+                            .mb-4
+                                .img-holder(style="background-image: url('../../"+arr[i] + "')" )
 
 mixin addsliderItem(obj)
     -for (var i = 0; i < obj.length; i++)
         .slider-item
-            .col-12.col-lg-8
-                .slider-item
-                    blockquote
-                        q= obj[i].content
-                    cite
-                        .img-holder
-                            img(src=obj[i].photo  alt= obj[i].name + "'s photo" )
-                        .description
+            .slider-item.text-center
+                blockquote
+                    q.d-block.mb-4= obj[i].content
+                    cite.d-flex.justify-content-center
+                        .img-holder(style="background-image: url('../../"+obj[i].photo + "')" )
+                        .description.text-left.ml-2
                             p= obj[i].name
                             p= obj[i].someText
 
 mixin clientsLogo(arr)
     .row.common-section
         - for (var i = 0; i < arr.length; i++)
-            .col-12.col-md-4.col-lg-3
+            .col-md-4.col-lg-3
                 .logo-holder
                     img(src=arr[i] alt=arr[i])
 
@@ -80,11 +78,10 @@ mixin personals(obj, theme)
     .container
         .row.justify-content-center
             -for (var i = 0; i < obj.length; i++)
-                .col-12.col-md-5.col-lg-2
+                .col-md-5.col-lg-2
                     .d-flex.flex-column.align-items-center.mb-5.mb-lg-0
                         .img-holder(style="background-image: url('../../"+obj[i].photo + "')" )
-                        .common-decoration-block
-                        .text-white
+                        .text-white.common-decoration-block
                             p= obj[i].name
                         +social(obj[i].socials, theme)
 
@@ -94,22 +91,22 @@ mixin social(obj, theme)
             ul.socials-contact.bg-light-green.nav
                 each index, item in obj
                     li
-                        a(class=item href=item)
+                        a(class="bg-for-"+ item href=obj[item])
                             span(class='icon-' + item)
     else
         .team-social.justify-content-center
             ul.socials-contact.bg-light-gray.nav
                 each index, item in obj
                     li
-                        a(class=item href=item)
+                        a(class="bg-for-"+ item href=item)
                             span(class='icon-' + item)
 
 mixin createPost(arr)
     .posts
         -for (var i=0; i < arr.length; i++)
             .d-flex.mb-3
-                .left-block.rounded.mr-2(style="background-image: url('../../"+ arr[i].photo + "')" )
-                .right-block.d-flex.flex-column.justify-content-center
-                    h5= arr[i].title
+                .img-holder.mr-2(style="background-image: url('../../"+ arr[i].photo + "')" )
+                .text-content.d-flex.flex-column.justify-content-center
+                    h4= arr[i].title
                     a.btn.btn-sm.text-uppercase.text-white.align-self-start(href="#" class="btn-" + arr[i].color)= arr[i].btnText
 
