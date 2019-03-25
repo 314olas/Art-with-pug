@@ -3,9 +3,9 @@ header{
   z-index: 20;
 }
 .nav-item.active{
-  font-weight: bold;
 
   @include media-breakpoint-up(lg) {
+    font-weight: bold;
 
     .nav-link{
       position: relative;
@@ -96,21 +96,51 @@ header{
 }
 
 .search-form{
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
 
   input{
     border-radius: 20px;
     background-color: rgba($white, .7);
-    padding: 5px 15px;
+    padding: 5px 30px 5px 15px;
     position: relative;
     color: $black;
+    z-index: 5;
+    &:focus{
+      background-color: rgba($white, .9);
+    }
+
 
     &:after{
       position: absolute;
-      content: "\e986";
+      content: "\e907";
       font-family: 'icomoon';
       right: 0;
       top: 50%;
-      transform: translateY(-50%)
+      transform: translateY(-50%);
+      z-index: 10;
     }
+  }
+
+  .search-btn{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    z-index: 55;
+    transform: translateY(-50%);
+    padding: 0;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  span{
+    font-size: 20px;
+    vertical-align: middle;
+    color: $secondary;
   }
 }

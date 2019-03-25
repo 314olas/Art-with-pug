@@ -4,32 +4,31 @@ include mixins
 section.info.common-section
     .container
         .row
-            .col-12.col-lg-4.mb-5.mb-lg-0
+            .col-lg-4.mb-5.mb-lg-0
                 +headingWithoutParagraph('about us')
                 .text-center.mb-4
                     p.mb-0 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Ut aliquam massa nisl quis neque. Suspendisse in orci enim.Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.
-                +social(ourSocialLinks)
-            .col-12.col-lg-4.mb-5.mb-lg-0
+                +social(aboutUsSocialLinks)
+            .col-lg-4.mb-5.mb-lg-0
                 .d-flex.flex-column.align-items-center
                     +headingWithoutParagraph('recent post')
                     +createPost(posts)
-            .col-12.col-lg-4
+            .col-lg-4
                 +headingWithoutParagraph('contact us')
-                .container
-                    .row.justify-content-center
-                        .col-9
-                            ul.contacts.nav.justify-content-center.mb-4
-                                li.text-center
-                                    adress 10044 West 23th Street, Suite 721 New York NY 10010
-                                li
-                                    span Email:
-                                        a(href="mailto:Username@email.com")  Username@email.com
-                                li
-                                    span Phone:
-                                        a(href="tel:+101234567890") Phone: +1 (0) 123 4567 890
-                                li
-                                    span Fax:
-                                        a(href="#")  +1 (0) 321 4567 890
+                .row.justify-content-center
+                    .col-12.col-xl-9
+                        ul.contacts.nav.justify-content-center.mb-4
+                            li.text-center
+                                adress 10044 West 23th Street, Suite 721 New York NY 10010
+                            li
+                                span Email:
+                                    a(href="mailto:Username@email.com")  Username@email.com
+                            li
+                                span Phone:
+                                    a(href="tel:+101234567890") Phone: +1 (0) 123 4567 890
+                            li
+                                span Fax:
+                                    a(href="#")  +1 (0) 321 4567 890
                 form.contact-form.d-flex.flex-column
                     input.form-control(type='text' placeholder="Your Name..." name="name")
 

@@ -1,9 +1,16 @@
 input{
     outline: none;
+    border-color: transparent;
+
+    &::-webkit-search-cancel-button{display: none;}
 }
 
 .wrapper{
     overflow: hidden;
+}
+
+h3,h4{
+    margin-bottom: 0;
 }
 
 h1 {
@@ -34,9 +41,16 @@ h3{
 .btn-gray{
     color: $gray-btn-color;
     background: $gray-btn-bg;
+    transition: background-color .3s;
+    padding-left: 33px;
 
     &:hover{
+        color: $gray-btn-color;
+        background-color: darken($gray-btn-bg, 4%);
+    }
 
+    &:focus{
+        box-shadow: none;
     }
 }
 
@@ -57,6 +71,10 @@ h3{
     color: $green-dark;
 }
 
+.text-success{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .title-decoration{
     position: relative;
     padding-bottom: 22px;
@@ -71,20 +89,18 @@ h3{
         width: 44px;
         border-top: 2px solid;
     }
-
-    h3{
-        margin-bottom: 0;
-    }
 }
 
 .top-block{
     min-height: 100vh;
+    height: 0;
     display: flex;
     flex-direction: column;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url('../../img/header-bg.jpg');
+
 }
 
 .intro{
@@ -96,11 +112,19 @@ h3{
     }
 }
 
+.top-block.menu-shown{
+
+    &:after{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
 .overlay{
     position: relative;
     z-index: 1;
 
-    &:after{
+    &:before{
         content: "";
         position: absolute;
         left: 0;
@@ -109,6 +133,20 @@ h3{
         top: 0;
         background-color: rgba($black, .2);
         z-index: 1;
+    }
+
+    &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: rgba($black, .8);
+        z-index: 15;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s, visibility .3s;
     }
 }
 
@@ -120,10 +158,16 @@ h3{
     a{
         background-color: rgba($white, .7);
         color: $black;
+        transition: background-color .3s;
 
         &:focus{
             outline: none;
             box-shadow: none;
+        }
+
+        &:hover{
+            color: $black;
+            background-color: rgba($white, .9);
         }
     }
 }
@@ -131,30 +175,34 @@ h3{
 .common-arrow-down{
     position: relative;
     padding-right: 45px;
+    font-weight: bold;
+    font-family: 'Proxima Nova Lt';
 
     &:after{
         position: absolute;
-        content: "\ea3e";
+        content: "\e905";
         font-family: 'icomoon';
         top: 50%;
-        right: 15px;
+        right: 20px;
         transform: translateY(-50%);
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
 .common-arrow-right{
     position: relative;
-    padding-right: 45px;
+    padding-right: 50px;
+    font-size: 18px;
+    min-width: 186px;
 
     &:after{
         position: absolute;
-        content: "\ea3c";
+        content: "\e904";
         font-family: 'icomoon';
         top: 50%;
-        right: 15px;
+        right: 20px;
         transform: translateY(-50%);
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -210,14 +258,17 @@ h3{
     }
 
     .custom-block{
-        flex-basis: 100%;
+        flex: 0 0 auto;
+        width: 100%;
 
         @include media-breakpoint-up(sm) {
-            flex-basis: 50%;
+            flex: 0 0 auto;
+            width: 50%;
         }
 
         @include media-breakpoint-up(lg) {
-            flex-basis: 20%;
+            flex: 0 0 auto;
+            width: 20%;
         }
     }
 }
@@ -242,6 +293,7 @@ h3{
 
 .our-client{
     background-color: $gray-100;
+
 }
 
 .meet-team{
@@ -278,6 +330,10 @@ h3{
             padding: 25px 0;
         }
     }
+
+    .common-heading-block{
+        margin-bottom: 45px;
+    }
 }
 
 .team-social{
@@ -292,7 +348,7 @@ h3{
     padding-left: 2px;
 
     li {
-        padding: 6px 4px;
+        padding: 4px 4px;
         text-align: center;
     }
 
@@ -301,6 +357,7 @@ h3{
         height: 24px;
         display: block;
     }
+
     span{
         font-size: 24px;
     }
@@ -308,14 +365,34 @@ h3{
 
 .bg-for-twitter{
     color: $info;
+
+    &:hover{
+        color: $info;
+    }
+}
+
+.bg-for-facebook{
+    color: $facebook-bg-color;
+
+    &:hover{
+        color: $facebook-bg-color;
+    }
 }
 
 .bg-for-behance{
     color: $blue;
+
+    &:hover{
+        color: $blue;
+    }
 }
 
 .bg-for-dribbble{
     color: $pink;
+
+    &:hover{
+        color:  $pink;
+    }
 }
 
 .bg-light-green{
@@ -347,14 +424,11 @@ h3{
         background-size: cover;
     }
 
-    .text-content{
-
-
-        a{
-            font-size: 13px;
-            padding-top: 2px;
-            padding-bottom: 2px;
-        }
+    a{
+        font-size: 13px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 4px;
     }
 }
 
@@ -414,5 +488,14 @@ h3{
     .title-holder{
         color: $gray-900;
     }
+
+    img{
+        max-width: 100%;
+    }
+
+    h4{
+        font-weight: bold;
+    }
+
 }
 
