@@ -2,7 +2,6 @@
 /.idea/
 /dist/
 /.git/
-/app/css/
 /**/*.psd
 /**/package-lock.json
 /**/Thumbs.db
