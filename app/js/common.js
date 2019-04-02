@@ -12,6 +12,16 @@ $(document).ready(function () {
     $('#navbarSupportedContent').on('hide.bs.collapse', function () {
         $('.overlay').removeClass('menu-shown');
     });
+
+    $(".btn.filter").click(function (e) {
+        if (!e.target.classList.contains("active")){
+            $(this).addClass("active");
+            var siblingsButton=  $(this).siblings("button");
+            for (var i = 0; i<siblingsButton.length; i++){
+                $(siblingsButton[i]).removeClass('active')
+            }
+        }
+    });
 });
 
 

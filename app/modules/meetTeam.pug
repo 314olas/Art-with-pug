@@ -4,8 +4,9 @@ include mixins
 
 section.meet-team.bg-primary
     .common-section
-        +heading("meet the team", "Lorem ipsum dolor sit amet. Proin gravida nibh vel velit auctor aliquet.","primary")
-        +personals(personal, 'green')
+        .container
+            +heading("meet the team", "Lorem ipsum dolor sit amet. Proin gravida nibh vel velit auctor aliquet.","primary")
+            +personals(personal, 'green')
     footer
         .text-center.btn-holder.text-white
             a.btn.btn-primary.text-uppercase(href="#") Work with us

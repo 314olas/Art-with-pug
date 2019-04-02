@@ -1,12 +1,16 @@
+body{
+    min-width: 320px;
+}
+
+.wrapper{
+    overflow: hidden;
+}
+
 input{
     outline: none;
     border-color: transparent;
 
     &::-webkit-search-cancel-button{display: none;}
-}
-
-.wrapper{
-    overflow: hidden;
 }
 
 h3,h4{
@@ -242,11 +246,6 @@ h3{
         background-color: $success;
         color: $white;
         border-color: $success;
-
-
-        &:focus{
-            box-shadow: none;
-        }
     }
 
     .img-holder{

@@ -61,12 +61,12 @@ mixin addsliderItem(obj)
             .slider-item.text-center
                 blockquote
                     q.d-block.mb-4= obj[i].content
-                    cite.d-flex.justify-content-center
+                    .d-flex.justify-content-center
                         .img-holder(style="background-image: url('../../"+obj[i].photo + "')" )
                         .description.text-left.ml-2
                             p
                                 strong= obj[i].name
-                            p= obj[i].someText
+                            cite= obj[i].someText
 
 mixin Logos(arr)
     .row.common-section
