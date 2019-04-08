@@ -8852,14 +8852,45 @@ h3 {
   background: #dddcdc;
   -webkit-transition: background-color .3s;
   -o-transition: background-color .3s;
-  transition: background-color .3s;
-  padding-left: 33px; }
+  transition: background-color .3s; }
   .btn-gray:hover {
     color: #a59d9d;
     background-color: #d3d2d2; }
   .btn-gray:focus {
     -webkit-box-shadow: none;
             box-shadow: none; }
+
+.btn-default {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #111;
+  -webkit-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s;
+  font-weight: bold;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-width: auto; }
+  .btn-default:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+  .btn-default:hover {
+    color: #111;
+    background-color: rgba(255, 255, 255, 0.9); }
+
+.btn-arrow-default span {
+  font-size: 10px;
+  display: inline-block;
+  vertical-align: baseline;
+  font-weight: bold;
+  padding-left: 10px; }
+
+.btn-arrow span {
+  font-size: 11px;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 10px;
+  font-weight: bold; }
 
 .common-section {
   padding-top: 40px;
@@ -8951,51 +8982,6 @@ h3 {
   padding-bottom: 12px;
   position: relative;
   z-index: 10; }
-  .scroll-down-holder a {
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #111;
-    -webkit-transition: background-color .3s;
-    -o-transition: background-color .3s;
-    transition: background-color .3s; }
-    .scroll-down-holder a:focus {
-      outline: none;
-      -webkit-box-shadow: none;
-              box-shadow: none; }
-    .scroll-down-holder a:hover {
-      color: #111;
-      background-color: rgba(255, 255, 255, 0.9); }
-
-.common-arrow-down {
-  position: relative;
-  padding-right: 45px;
-  font-weight: bold;
-  font-family: 'Proxima Nova Lt'; }
-  .common-arrow-down:after {
-    position: absolute;
-    content: "\e905";
-    font-family: 'icomoon';
-    top: 50%;
-    right: 20px;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    font-size: 12px; }
-
-.common-arrow-right {
-  position: relative;
-  padding-right: 50px;
-  font-size: 18px;
-  min-width: 186px; }
-  .common-arrow-right:after {
-    position: absolute;
-    content: "\e904";
-    font-family: 'icomoon';
-    top: 50%;
-    right: 20px;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    font-size: 12px; }
 
 .card {
   margin-bottom: 30px; }
@@ -9052,10 +9038,6 @@ h3 {
       width: 50%; } }
   @media (min-width: 992px) {
     .latest-work .custom-block {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto;
       width: 20%; } }
 
 .testimonials p {
@@ -9072,6 +9054,13 @@ h3 {
   -webkit-background-size: cover;
           background-size: cover;
   border: 1px solid #e1e1e1; }
+
+.testimonials span {
+  display: block; }
+
+.testimonials a {
+  color: #828181;
+  outline: none; }
 
 .our-client {
   background-color: #f2f1f1; }
@@ -9245,8 +9234,18 @@ h3 {
   .seen-on h4 {
     font-weight: bold; }
 
+.alert-block {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  color: #f34d04; }
+  .alert-block p {
+    margin: 0; }
+
 header {
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: 20; }
 
 @media (min-width: 992px) {

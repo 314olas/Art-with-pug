@@ -7,7 +7,7 @@ jQuery(function() {
 // initialize smooth anchor links
 function initAnchors() {
     new SmoothScroll({
-        anchorLinks: 'a[href^="#main"]:not([href="#"])',
+        anchorLinks: 'a[href^="#weDo"]:not([href="#"])',
         extraOffset: 0,
         wheelBehavior: 'none'
     });

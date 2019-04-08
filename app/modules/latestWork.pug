@@ -6,10 +6,19 @@ section.latest-work.bg-primary.common-section
     .container
         +heading("our latest work", "Lorem ipsum dolor sit amet. Proin gravida nibh vel velit auctor aliquet.","primary")
         .d-flex.justify-content-center
-            .btn-group(aria-label="filter-button")
-                button.filter.btn.btn-light.active(type='button') Photography
-                button.filter.btn.btn-light(type='button') Design
-                button.filter.btn.btn-light(type='button') Print
-        +addImg(img)
-        .text-center
-            a.btn.btn-success.common-arrow-right(href="#") View more work
+            .btn-group.btn-filter-group(aria-label="filter-button")
+                button.filter.btn.btn-light.active(type='button' data-filter="*") Photography
+                button.filter.btn.btn-light(type='button' data-filter=".nature") Design
+                button.filter.btn.btn-light(type='button' data-filter=".tables") Print
+    .container.common-section
+        .row.justify-content-center
+            .col-lg-10
+                .row
+    .grid
+        .custom-block
+
+
+
+    .text-center
+        a.btn.btn-success.btn-arrow(href="#" id="vieMore") View more work
+            span.icon-arrow-right

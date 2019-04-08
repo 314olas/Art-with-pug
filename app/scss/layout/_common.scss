@@ -46,7 +46,6 @@ h3{
     color: $gray-btn-color;
     background: $gray-btn-bg;
     transition: background-color .3s;
-    padding-left: 33px;
 
     &:hover{
         color: $gray-btn-color;
@@ -55,6 +54,48 @@ h3{
 
     &:focus{
         box-shadow: none;
+    }
+}
+
+.btn-default{
+    background-color: rgba($white, .7);
+    color: $black;
+    transition: background-color .3s;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: auto;
+
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:hover{
+        color: $black;
+        background-color: rgba($white, .9);
+    }
+}
+
+.btn-arrow-default{
+
+    span{
+        font-size: 10px;
+        display: inline-block;
+        vertical-align: baseline;
+        font-weight: bold;
+        padding-left: 10px;
+    }
+}
+
+.btn-arrow{
+
+    span{
+        font-size: 11px;
+        display: inline-block;
+        vertical-align: baseline;
+        margin-left: 10px;
+        font-weight: bold;
     }
 }
 
@@ -158,56 +199,6 @@ h3{
     padding-bottom: 12px;
     position: relative;
     z-index: 10;
-
-    a{
-        background-color: rgba($white, .7);
-        color: $black;
-        transition: background-color .3s;
-
-        &:focus{
-            outline: none;
-            box-shadow: none;
-        }
-
-        &:hover{
-            color: $black;
-            background-color: rgba($white, .9);
-        }
-    }
-}
-
-.common-arrow-down{
-    position: relative;
-    padding-right: 45px;
-    font-weight: bold;
-    font-family: 'Proxima Nova Lt';
-
-    &:after{
-        position: absolute;
-        content: "\e905";
-        font-family: 'icomoon';
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        font-size: 12px;
-    }
-}
-
-.common-arrow-right{
-    position: relative;
-    padding-right: 50px;
-    font-size: 18px;
-    min-width: 186px;
-
-    &:after{
-        position: absolute;
-        content: "\e904";
-        font-family: 'icomoon';
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        font-size: 12px;
-    }
 }
 
 .card{
@@ -266,7 +257,7 @@ h3{
         }
 
         @include media-breakpoint-up(lg) {
-            flex: 0 0 auto;
+            //flex: 0 0 auto;
             width: 20%;
         }
     }
@@ -287,6 +278,15 @@ h3{
         background-repeat: no-repeat;
         background-size: cover;
         border: 1px solid $cite-img-holder-border;
+    }
+
+    span{
+        display: block;
+    }
+
+    a{
+        color: $gray-500;
+        outline: none;
     }
 }
 
@@ -495,6 +495,17 @@ h3{
     h4{
         font-weight: bold;
     }
+}
 
+.alert-block{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: $danger;
+
+    p{
+        margin: 0;
+    }
 }
 

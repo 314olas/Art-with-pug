@@ -49,11 +49,13 @@ mixin addImg(arr)
     .container.common-section
         .row.justify-content-center
             .col-lg-10
-                .row
+                .row.grid
                     - for (var i = 0; i < arr.length; i++)
-                        .custom-block.col
+                        .custom-block.col.grid-item(class= arr[i].description)
                             .mb-4
-                                .img-holder(style="background-image: url('../../"+arr[i] + "')" )
+                                a(href=arr[i].path)
+                                    .img-holder(style="background-image: url('../../"+arr[i].workImage + "')" )
+
 
 mixin addsliderItem(obj)
     -for (var i = 0; i < obj.length; i++)
@@ -63,16 +65,18 @@ mixin addsliderItem(obj)
                     q.d-block.mb-4= obj[i].content
                     .d-flex.justify-content-center
                         .img-holder(style="background-image: url('../../"+obj[i].photo + "')" )
-                        .description.text-left.ml-2
-                            p
-                                strong= obj[i].name
-                            cite= obj[i].someText
+                        a.ml-2(href="")
+                           cite.description.text-left
+                               span
+                                   strong= obj[i].name
+                               span= obj[i].someText
 
 mixin Logos(arr)
     .row.common-section
         - for (var i = 0; i < arr.length; i++)
             .col-md-6.col-lg-3.d-flex.align-items-center.justify-content-center.mb-5
-                img(src=arr[i] alt=arr[i])
+                a(href= arr[i].link)
+                    img(src=arr[i].logo alt=arr[i].logo)
 
 mixin personals(obj, theme)
     .container
